@@ -7,6 +7,7 @@
 
 / {
     macros {
+        // Back Window
         ZMK_MACRO(M1,
             wait-ms = <30>;
             tap-ms = <40>;
@@ -15,6 +16,7 @@
                 <&macro_tap &kp LALT TAB>,
                 <&macro_release &kp LSHIFT>;
         ),
+        // Terminal start
         ZMK_MACRO(M2,
             wait-ms = <30>;
             tap-ms = <40>;
@@ -27,11 +29,11 @@
 
 / tap_dance {
     compatible = "zmk,tap-dance";
-    brightness,
-        volume
-        mouse button,
+        brightness hold=down taphold=up,
+        volume tap=up hold=down dtap = mute taphold=up
+        mouse button tap/hold= up dtap/taphold = down,
+        exit tap=na hold=altf4
 
-[M6 M4 &kp NO &kp NO 200],
 [&kp NO &kp BRID &kp NO &kp BRIU 420], 
 [&kp BTN2 &kp BTN2 &kp BTN3&kp BTN3 200], 
 [M2 M3 &kp NO &kp NO 200], 
