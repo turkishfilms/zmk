@@ -1,0 +1,158 @@
+
+[[
+&kp Q &kp W &kp F &kp P 
+ &kp A &kp R &mt LSHIFT S  &mt LCTRL T
+&kp Z &kp X &kp C &kp D
+ &mo 1 &kp BSPC
+ &kp L &kp U &kp Y &kp SEMI 
+ &mt RSHIFT N &mt RSHIFT E &mt LALT I &kp O 
+&kp H &kp COMMA &kp DOT &kp FSLH
+&kp SPACE &mo 2 
+ 
+[ &kp F7 &kp F8&kp F9 &kp F10
+ &kp 6 &kp 7 "TD(1)&kp 0
+ &kp HOME &kp END &kp GRAVE"TD(12)
+ &kp NO &kp NO
+ "TD(7) "TD(8) "TD(9) "TD(10)
+ &kp 1 "TD(0) &kp 4 &kp 5 
+"TD(13) &kp QUOTE &kp SCOLON &kp BSLASH
+[&kp MINUS &kp EQUAL &kp NO"]], 
+[
+&kp PSCREEN &kp MUTE &kp VOLD &kp VOLU
+ &kp NO &kp NO &kp LCTRL &kp LSHIFT
+ &kp NO &kp NO "TG(5) "TG(9)
+ &kp SPACE &kp BSPACE 
+
+&kp WBAK "TD(3) &kp WFWD "TD(2) 
+&kp NO &kp UP &kp NO "TD(4) 
+&kp LEFT &kp DOWN &kp RIGHT &kp NO 
+&kp NO &kp NO"]], 
+[
+ &kp Q &kp W&kp E &kp R 
+ &kp A &kp S"LCTRL(&kp D) "LSFT_T(&kp F) 
+ &kp Z&kp X &kp C &kp V 
+ &kp NO &kp NO-1, -1, -1], 
+ &kp WBAK "TD(3) &kp WFWD "TD(2)&kp NO 
+ "M0 &kp MS_U "M1 &kp WH_U
+ &kp MS_L &kp MS_D &kp MS_R &kp WH_D
+[&kp BTN1 "TD(5) &kp NO"]], 
+[
+ &kp NO&kp NO &kp NO &kp NO 
+ &kp NO &kp NO&kp NO &kp NO 
+ &kp NO &kp NO &kp NO&kp NO 
+ &kp NO &kp NO
+ &kp NO &kp NO &kp NO &kp NO
+ &kp NO &kp NO &kp NO &kp NO
+ &kp NO &kp NO &kp NO &kp NO
+ &kp NO &kp NO"]], 
+[
+ &kp 6&kp 7 "TD(1) &kp 0 
+ &kp I &kp H&mt LSHIFT  E) "LSFT_T(&kp A) 
+ &kp LGUI&kp DELETE &kp ESCAPE &kp ENTER 
+[&kp TAB"OSL(7) &kp LALT 
+ &kp 1 "TD(0)&kp 4 &kp 5 
+ "RSFT_T(&kp S)&mt RSHIFT  T) &kp N "TD(14) 
+ "TO(2)&kp COMMA &kp DOT &kp SLASH 
+[&kp SPACE"OSL(6) &kp BSPACE"]], 
+[
+ &kp F7&kp F8 &kp F9 &kp F10 
+ &kp Q &kp Y&kp U &kp O 
+ &kp NO &kp NO &kp NO&kp NO 
+ &kp NO &kp NO
+ "TD(7) "TD(8) "TD(9) "TD(10)
+ &kp C &kp L &kp P &kp V 
+"TD(2) &kp NO &kp NO &kp NO 
+ &kp NO&kp NO"]], 
+[
+ &kp HOME &kp END&kp GRAVE "TD(12) 
+ &kp J &kp D&kp K &kp W 
+ &kp NO &kp NO &kp NO&kp NO 
+ &kp NO &kp NO
+ "TD(13) "LSFT(&kp GRAVE) &kp SCOLON &kp BSLASH&kp NO 
+ &kp F &kp G &kp M &kp B
+ &kp NO &kp NO &kp NO &kp NO
+[&kp MINUS &kp EQUAL &kp QUOTE"]], 
+ &kp NO &kp NO"]], [[&kp NO &kp NO
+&kp NO &kp NO "TO(0)  &kp GRAVE
+&kp 1 &kp 2 &kp 3  &kp 7 &kp 4
+&kp 5 &kp 6  &kp COMMA &kp DOT -1,
+-1, -1],  &kp NO &kp NO &kp NO &kp NO
+[&kp 8 &kp 9 &kp 0 &kp MINUS &kp EQUAL
+[&kp BSLASH &kp LBRACKET &kp RBRACKET &kp SCOLON
+&kp QUOTE [&kp SLASH &kp U &kp NO -1, -1,
+-1]]], 
+"encoder_layout": [[], [], [], [], [], [], [], [], [],
+[]], 
+"layout_options": -1, "macro": 
+[
+[
+["down &kp LALT&kp LSHIFT 
+["tap &kp TAB 
+["up &kp LALT&kp LSHIFT"]], 
+[
+["down &kp LCTRL 
+["tap &kp TAB 
+["up&kp LCTRL"]], 
+[
+["down &kp LALT 
+["tap &kp F4 
+["up&kp LALT"]], 
+[
+["text "exit 
+["tap &kp ENTER"]], 
+[], 
+[],
+[
+["down &kp LGUI 
+["tap &kp X 
+["up &kp LGUI
+["delay 117], 
+["tap &kp I"]
+	], 
+
+"tap_dance":
+[
+[&kp 2 &kp 3 &kp NO &kp NO 200], 
+[&kp 9 &kp 8&kp NO &kp NO 200], 
+[M6 M4 &kp NO &kp NO 200],
+[&kp NO M2 &kp NO &kp NO 200], 
+[&kp NO &kp BRID &kp NO &kp BRIU 420], 
+[&kp BTN2 &kp BTN2 &kp BTN3&kp BTN3 200], 
+[&kp R "LSFT(&kp SCOLON) &kp NO &kp NO150], 
+[&kp F11 &kp F1 &kp NO &kp NO 175], 
+[&kp F12&kp F2 &kp NO &kp NO 200], 
+[&kp F3 &kp F4 &kp NO&kp NO 200], 
+[&kp F5 &kp F6 &kp NO &kp NO 200], 
+[M2 M3 &kp NO &kp NO 200], 
+[LSFT(&kp LBRACKET) LSFT(&kp RBRACKET) &kp NO &kp NO 200], 
+[&kp LBRACKET&kp RBRACKET &kp NO &kp NO 200], 
+[&kp VOLU &kp VOLD&kp MUTE &kp VOLU 200], 
+]], 
+"combo": 
+[
+[&kp Q &kp W&kp NO &kp NO &kp ESCAPE 
+[&kp SPACE "MO(2) &kp NO&kp NO "TO(3) 
+[&kp BTN1 "TD(5) &kp NO &kp NO"TO(0) 
+[&kp Z &kp X &kp NO &kp NO "OSM(MOD_LGUI)
+[&kp P &kp BSPACE &kp NO &kp NO &kp DELETE 
+[&kp DOT&kp SLASH &kp NO &kp NO &kp ENTER 
+["MO(1)&kp BSPACE &kp NO &kp NO &kp DELETE 
+[&kp C &kp L&kp NO &kp NO &kp X 
+[&kp P &kp V &kp NO &kp NO&kp Z 
+[&kp BSPACE "OSL(6) &kp NO &kp NO "TO(3)
+[&kp A &kp R &kp NO &kp NO &kp TAB 
+[&kp P"LSFT_T(&kp T) &kp NO &kp NO &kp G 
+["LSFT_T(&kp T)&kp D &kp NO &kp NO &kp B 
+[&kp F &mt LSHIFT  S)&kp NO &kp NO &kp V 
+[&kp L "RSFT_T(&kp N) &kp NO&kp NO &kp K 
+["RSFT_T(&kp N) &kp H &kp NO &kp NO&kp J 
+[&kp U &mt RSHIFT  E) &kp NO &kp NO &kp M
+[&mt RSHIFT  E) &kp COMMA &kp NO &kp NO "M0
+[&mt LALT  I) &kp DOT &kp NO &kp NO "M1
+["LSFT(&kp SCOLON) &kp O &kp NO &kp NO "TD(4) 
+[&kp Y&mt LALT  I) &kp NO &kp NO "TD(14)] 
+"key_override": [], 
+"settings": {"1": 0, "2": 50, "3": 0, "4": 175,
+"5": 3, "6": 5000, "7": 200, "8": 3, "9": 23, "10": 30, "11": 2,
+"12": 20, "13": 29, "14": 10, "15": 80, "16": 8, "17": 40, "18":
+0, "19": 80, "20": 5, "21": 128}}

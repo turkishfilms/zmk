@@ -27,17 +27,14 @@
 
 / tap_dance {
     compatible = "zmk,tap-dance";
-
+    brightness,
+        volume
+        mouse button,
 
 [M6 M4 &kp NO &kp NO 200],
-[&kp NO M2 &kp NO &kp NO 200], 
 [&kp NO &kp BRID &kp NO &kp BRIU 420], 
 [&kp BTN2 &kp BTN2 &kp BTN3&kp BTN3 200], 
 [M2 M3 &kp NO &kp NO 200], 
-[LSFT(&kp LBRACKET) LSFT(&kp RBRACKET) &kp NO &kp NO 200], 
-[&kp LBRACKET&kp RBRACKET &kp NO &kp NO 200], 
-[&kp VOLU &kp VOLD&kp MUTE &kp VOLU 200], 
-]], 
 
 }
 
