@@ -6,6 +6,42 @@
 // MOUSE
 
 / {
+    macros {
+        ZMK_MACRO(M1,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = 
+                <&macro_press &kp LSHIFT>,
+                <&macro_tap &kp LALT TAB>,
+                <&macro_release &kp LSHIFT>;
+        ),
+        ZMK_MACRO(M2,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = 
+                <&macro_tap &kp LGUI x>,
+                <&macro_wait_time 117, >,
+                <&macro_tap &kp I>;
+    }
+}
+
+/ tap_dance {
+    compatible = "zmk,tap-dance";
+
+
+[M6 M4 &kp NO &kp NO 200],
+[&kp NO M2 &kp NO &kp NO 200], 
+[&kp NO &kp BRID &kp NO &kp BRIU 420], 
+[&kp BTN2 &kp BTN2 &kp BTN3&kp BTN3 200], 
+[M2 M3 &kp NO &kp NO 200], 
+[LSFT(&kp LBRACKET) LSFT(&kp RBRACKET) &kp NO &kp NO 200], 
+[&kp LBRACKET&kp RBRACKET &kp NO &kp NO 200], 
+[&kp VOLU &kp VOLD&kp MUTE &kp VOLU 200], 
+]], 
+
+}
+
+/ {
     combos {
         compatible = "zmk,combos";
         combo_esc {
@@ -31,7 +67,7 @@
         combo_GUI { 
             timeout-ms = <200>;
             key-positions = <8 9>;
-            bindings = <&kp OSMMOD_LGUI>;
+            bindings = <&kp LGUI "One Shot Key">;
         },
         combo_DEL { 
             timeout-ms = <200>;
@@ -87,7 +123,7 @@
         combo_M0 {
             timeout-ms = <200>;
             key-positions = <20 24>;
-            bindings = <&kp M0>;
+            bindings = <&kp LC(TAB)>;
         },
         combo_M1 {
             timeout-ms = <200>;
@@ -137,13 +173,13 @@
 	    //             | g | b  0 | 1
 
             bindings = <
-                &kp F7 &kp F8 &kp F &kp F10
-                &kp N6 &kp N7 TD(1) &kp N0
-                &kp HOME &kp END &kp, GRAVE TD(12)
+                &kp F7 &kp F8 &kp F9 &kp F10
+                &kp N6 &kp N7 &mt N8 N9 &kp N0
+                &kp HOME &kp END &kp, GRAVE &mt LS(RBKT) LS(LBKT)
                 &trans &trans
-                TD(7) TD(8) TD(9) TD(10)
-                &kp N1 TD(0) &kp N4 &kp N5 
-                TD(13) &kp SQT &kp SEMI &kp BSLH
+                &mt F1 F11 &mt F2 F12 &mt F4 F3 &mt F6 F5
+                &kp N1 &mt N3 N2 &kp N4 &kp N5 
+                &mt RBKT LBKT &kp SQT &kp COLON &kp BSLH
                 &kp MINUS &kp EQUAL
             >;
         },
@@ -154,8 +190,9 @@
                 &trans &trans &kp LCTRL &kp LSHIFT
                 &trans &trans TG(5) TG(9)
                 &kp SPACE &kp BSPCE 
-                &kp C_AC_BACK TD(3) &kp C_AC_FORWARD TD(2) 
-                &trans &kp UP &trans TD(4) 
+
+                &kp LA(LEFT) &mt LA(F4) ESC &kp LA(RIGHT) &M2
+                &trans &kp UP &trans BRIGHTNESS "hold=down taphold=up"
                 &kp LEFT &kp DOWN &kp RIGHT &trans 
                 &trans &trans 
             >;
@@ -168,8 +205,8 @@
                 &kp Z &kp X &kp C &kp V 
                 &trans &trans
 
-                &kp C_AC_BACK TD(3) &kp C_AC_BACK TD(2) &trans 
-                M0 &kp MS_U M1 &kp WH_U
+                &kp LA(LEFT) &mt LA(F4) ESC &kp LA(RIGHT) TD(2) &trans 
+                &kp LC(TAB) &kp MS_U &M1 &kp WH_U
                 &kp MS_L &kp MS_D &kp MS_R &kp WH_D
                 &mkp MB1 TD(5)
             >;
