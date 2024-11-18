@@ -21,9 +21,18 @@
             wait-ms = <30>;
             tap-ms = <40>;
             bindings = 
-                <&macro_tap &kp LGUI x>,
+                <&macro_tap &kp LG(X)>,
                 <&macro_wait_time 117, >,
                 <&macro_tap &kp I>;
+        ),
+        ZMK_MACRO(clear_term_bg,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = 
+               <&macro_tap &kp LG(D)>,
+                <&macro_tap &kp LALT TAB>;
+            )
+
     }
 }
 
@@ -33,6 +42,17 @@
         volume tap=up hold=down dtap = mute taphold=up
         mouse button tap/hold= up dtap/taphold = down,
         exit tap=na hold=altf4
+
+/ {
+    behaviors {
+        td_brightness: td_brightness {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mt trans bright.down>, <&mt trans bright.up>;
+},
+            td_vol: td_vol 
+    };
 
 [&kp NO &kp BRID &kp NO &kp BRIU 420], 
 [&kp BTN2 &kp BTN2 &kp BTN3&kp BTN3 200], 
@@ -45,7 +65,7 @@
         compatible = "zmk,combos";
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <0 1>;
+ey-positions = <0 1>;
             bindings = <&kp ESC>
         },
         combo_ESCAPE {
