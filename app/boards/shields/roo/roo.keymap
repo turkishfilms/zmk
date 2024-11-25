@@ -167,7 +167,7 @@ combos {
 
             bindings = <
                 &kp Q &kp W &kp F &kp P 
-                &kp A &kp R &mt LSHIFT S &mt LCTRL T
+                &kp A &kp R &mt LCTRL S &mt LSHIFT T
                 &kp Z &kp X &kp C &kp D
                 &mo 1 &kp BSPC
                 &kp L &kp U &kp Y &kp SEMI 
