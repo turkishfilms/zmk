@@ -1,15 +1,11 @@
 #include <dt-bindings/zmk/mouse.h>
 
 // I MESSED SOMETHING UP BIGTIME GO CHECK EVERYTHING AND MAKEE SURE ITS RGHT
-// TAPDANCE
-// COMBOS
-// MACROS
-// MOUSE
 
 / {
     macros {
         // Back Window
-        ZMK_MACRO(mk_new_window,
+        ZMK_MACRO(m_NEXT_WINDOW,
             wait-ms = <30>;
             tap-ms = <40>;
             bindings = 
@@ -65,92 +61,104 @@ combos {
         timeout-ms = <200>;
         key-positions = <0 1>;
         bindings = <&kp ESCAPE>;
+        layers = <0>;
     },
-    combo_TO3 {
+    combo_TO_MOUSE {
         timeout_ms = <200>;
         key-positions = <26 27>;
-        bindings = <&kp TO3>;
+        bindings = <&to 2>;
+        layers = <0>;
     },
-    combo_TO0{ 
+    combo_TO_DEFAULT{ 
         timeout-ms = <200>;
-        key-positions = <BTN1 TD5>;
-        bindings = <&kp TO0>;
+        key-positions = <26 27>;
+        bindings = <&to 0>;
+        layers = <2>;
     },
     combo_GUI { 
         timeout-ms = <200>;
         key-positions = <8 9>;
-        bindings = <&kp LGUI "One Shot Key">;
+        bindings = <&sk LGUI>;
+        layers = <0>;
     },
     combo_DEL { 
         timeout-ms = <200>;
         key-positions = <3 12>;
         bindings = <&kp DELETE >;
+        layers = <0>;
     },
     combo_ENTER {
         timeout-ms = <200>;
         key-positions = <24 25>;
         bindings = <&kp ENTER>;
-    },
-    combo_TO3 {
-        timeout-ms = <200>;
-        key-positions =<12 OSL6>;
-        bindings = <&kp TO3>;
+        layers = <0>;
     },
     combo_tab {
         timeout-ms = <200>;
         key-positions =<4 5>;
         bindings = <&kp TAB>;
+        layers = <0>;
         },
-        combo_G {
-            timeout-ms = <200>;
-            key-positions =<3 7>;
-            bindings = <&kp G>;
-        },
-        combo_B {
-            timeout-ms = <200>;
-            key-positions =<7 11>;
-            bindings = <&kp B>;
-        },
-        combo_V {
-            timeout-ms = <200>;
-            key-positions =<2 6>;
-            bindings = <&kp V>;
-        },
-        combo_K {
-            timeout-ms = <200>;
-            key-positions =<14 18>;
-            bindings = <&kp K>;
-        },
-        combo_J {
-            timeout-ms = <200>;
-            key-positions =<18 22>;
-            bindings = <&kp J>;
-        },
-        combo_M {
-            timeout-ms = <200>;
-            key-positions = <15 19>;
-            bindings = <&kp M>;
-        },
-        combo_M0 {
-            timeout-ms = <200>;
-            key-positions = <20 24>;
-            bindings = <&kp LC(TAB)>;
-        },
-        combo_M1 {
-            timeout-ms = <200>;
-            key-positions = <21 25>;
-            bindings = <&kp M1>;
-        },
-        combo_TD4 {
-            timeout-ms = <200>;
-            key-positions = <17 22>;
-            bindings = <&td_volume>;
-        },
-        combo_TD14 {
-            timeout-ms = <200>;
-            key-positions = <16 20>;
-            bindings = <&td_brightness>;
-        },
+    combo_G {
+        timeout-ms = <200>;
+        key-positions =<3 7>;
+        bindings = <&kp G>;
+        layers = <0>;
+    },
+    combo_B {
+        timeout-ms = <200>;
+        key-positions =<7 11>;
+        bindings = <&kp B>;
+        layers = <0>;
+    },
+    combo_V {
+        timeout-ms = <200>;
+        key-positions =<2 6>;
+        bindings = <&kp V>;
+        layers = <0>;
+    },
+    combo_K {
+        timeout-ms = <200>;
+        key-positions =<14 18>;
+        bindings = <&kp K>;
+        layers = <0>;
+    },
+    combo_J {
+        timeout-ms = <200>;
+        key-positions =<18 22>;
+        bindings = <&kp J>;
+        layers = <0>;
+    },
+    combo_M {
+        timeout-ms = <200>;
+        key-positions = <15 19>;
+        bindings = <&kp M>;
+        layers = <0>;
+    },
+    combo_NEXT_TAB {
+        timeout-ms = <200>;
+        key-positions = <20 24>;
+        bindings = <&kp LC(TAB)>;
+        layers = <0>;
+    },
+    combo_NEXT_WINDOW {
+        timeout-ms = <200>;
+        key-positions = <21 25>;
+        bindings = <&m_NEXT_WINDOW>;
+        layers = <0>;
+    },
+    combo_TD4 {
+        timeout-ms = <200>;
+        key-positions = <17 22>;
+        bindings = <&td_volume>;
+        layers = <0>;
+    },
+    combo_TD14 {
+        timeout-ms = <200>;
+        key-positions = <16 20>;
+        bindings = <&td_brightness>;
+        layers = <0>;
+    },
     };
 };
 
@@ -195,7 +203,11 @@ combos {
             >;
         },
         navigation_layer {
-
+            // -------------------------------------
+            // |psc|mut|vdn|vup         bka|qut|fwa|trm
+            // |   |   |ctr|shf            |up |   |tdb
+            // |   |   |   |            lef|dwn|rht|  
+	    //             |spc|bk     |   
             bindings = <
                 &kp PSCRN &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP
                 &trans &trans &kp LCTRL &kp LSHIFT
@@ -209,7 +221,11 @@ combos {
             >;
          },
         mouse_layer {
-
+            // -------------------------------------
+            // | q | w | e | r          bkb|qut|fwb|trm
+            // | a | s |ctD|shF         nxt|mup|nxw|scu
+            // | z | x | c | v          mlf|mdn|mrt|scd
+	    //             |   |    mb1|tdM
             bindings = <
                 &kp Q &kp W &kp E &kp R 
                 &kp A &kp S &mt LCTRL D &mt LSHIFT F 
@@ -217,9 +233,9 @@ combos {
                 &trans &trans
 
                 &kp LA(LEFT) &mt LA(F4) TRANS &kp LA(RIGHT) &td_term
-                &kp LC(TAB) &kp MS_U &M1 &kp WH_U
-                &kp MS_L &kp MS_D &kp MS_R &kp WH_D
-                &mkp MB1 TD(5)
+                &kp LC(TAB) &mmv MOVE_UP &m_NEXT_WINDOW &kp WH_U
+                &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp WH_D
+                &mkp MB1 &td_mouse
             >;
         }
     };
