@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+>>>>>>> cb0007727391cdc404aaaa8b28a2bea8c6d6bd8d
 description: |
   Listener to subscribe to input events and send HID updates after processing
 
@@ -7,6 +13,7 @@ properties:
   device:
     type: phandle
     required: true
+<<<<<<< HEAD
   xy-swap:
     type: boolean
   x-invert:
@@ -19,3 +26,19 @@ properties:
   scale-divisor:
     type: int
     default: 1
+=======
+  input-processors:
+    type: phandle-array
+
+child-binding:
+  description: "Listener overrides for certain layers"
+
+  properties:
+    layers:
+      type: array
+      required: true
+    process-next:
+      type: boolean
+    input-processors:
+      type: phandle-array
+>>>>>>> cb0007727391cdc404aaaa8b28a2bea8c6d6bd8d

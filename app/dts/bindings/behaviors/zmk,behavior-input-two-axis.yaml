@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+>>>>>>> cb0007727391cdc404aaaa8b28a2bea8c6d6bd8d
 description: Two axis input behavior
 
 compatible: "zmk,behavior-input-two-axis"

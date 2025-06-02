@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.13.1)
 
 set(CONFIG_APPLICATION_DEFINED_SYSCALL true)
 
+set(ZEPHYR_BOARD_ALIASES "boards/aliases.cmake")
 set(ZEPHYR_EXTRA_MODULES "${ZMK_EXTRA_MODULES};${CMAKE_CURRENT_SOURCE_DIR}/module;${CMAKE_CURRENT_SOURCE_DIR}/keymap-module")
 
 # Find Zephyr. This also loads Zephyr's build system.
@@ -16,6 +17,7 @@ if(CONFIG_ZMK_BEHAVIOR_LOCAL_IDS)
 endif()
 
 zephyr_syscall_header(${APPLICATION_SOURCE_DIR}/include/drivers/behavior.h)
+zephyr_syscall_header(${APPLICATION_SOURCE_DIR}/include/drivers/input_processor.h)
 zephyr_syscall_header(${APPLICATION_SOURCE_DIR}/include/drivers/ext_power.h)
 
 # Add your source file to the "app" target. This must come after
@@ -41,8 +43,10 @@ target_sources_ifdef(CONFIG_USB_DEVICE_STACK app PRIVATE src/events/usb_conn_sta
 target_sources(app PRIVATE src/behaviors/behavior_reset.c)
 target_sources_ifdef(CONFIG_ZMK_EXT_POWER app PRIVATE src/behaviors/behavior_ext_power.c)
 target_sources_ifdef(CONFIG_ZMK_BEHAVIOR_SOFT_OFF app PRIVATE src/behaviors/behavior_soft_off.c)
+add_subdirectory_ifdef(CONFIG_ZMK_POINTING src/pointing/)
 if ((NOT CONFIG_ZMK_SPLIT) OR CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
   target_sources(app PRIVATE src/hid.c)
+
   target_sources_ifdef(CONFIG_ZMK_MOUSE app PRIVATE src/mouse/input_listener.c)
   target_sources(app PRIVATE src/behaviors/behavior_key_press.c)
   target_sources_ifdef(CONFIG_ZMK_BEHAVIOR_KEY_TOGGLE app PRIVATE src/behaviors/behavior_key_toggle.c)
@@ -65,7 +69,7 @@ if ((NOT CONFIG_ZMK_SPLIT) OR CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
   target_sources_ifdef(CONFIG_ZMK_BEHAVIOR_STUDIO_UNLOCK app PRIVATE src/behaviors/behavior_studio_unlock.c)
   target_sources_ifdef(CONFIG_ZMK_BEHAVIOR_INPUT_TWO_AXIS app PRIVATE src/behaviors/behavior_input_two_axis.c)
   target_sources(app PRIVATE src/combo.c)
-  target_sources(app PRIVATE src/behaviors/behavior_tap_dance.c)
+  target_sources_ifdef(CONFIG_ZMK_BEHAVIOR_TAP_DANCE app PRIVATE src/behaviors/behavior_tap_dance.c)
   target_sources(app PRIVATE src/behavior_queue.c)
   target_sources(app PRIVATE src/conditional_layer.c)
   target_sources(app PRIVATE src/endpoints.c)
@@ -94,7 +98,7 @@ target_sources_ifdef(CONFIG_ZMK_BATTERY_REPORTING app PRIVATE src/battery.c)
 target_sources_ifdef(CONFIG_ZMK_HID_INDICATORS app PRIVATE src/events/hid_indicators_changed.c)
 
 target_sources_ifdef(CONFIG_ZMK_SPLIT app PRIVATE src/events/split_peripheral_status_changed.c)
-add_subdirectory(src/split)
+add_subdirectory_ifdef(CONFIG_ZMK_SPLIT src/split)
 
 target_sources_ifdef(CONFIG_USB_DEVICE_STACK app PRIVATE src/usb.c)
 target_sources_ifdef(CONFIG_ZMK_USB app PRIVATE src/usb_hid.c)

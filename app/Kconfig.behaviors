@@ -51,13 +51,11 @@ if ZMK_BEHAVIOR_HOLD_TAP
 
 config ZMK_BEHAVIOR_HOLD_TAP_MAX_HELD
     int "Hold Tap Max Held"
-    default 10
     help
       Max number of simultaneously held hold-taps
 
 config ZMK_BEHAVIOR_HOLD_TAP_MAX_CAPTURED_EVENTS
     int "Hold Tap Max Captured Events"
-    default 40
     help
       Max number of captured system events while waiting to resolve hold taps
 
@@ -71,7 +69,11 @@ config ZMK_BEHAVIOR_KEY_TOGGLE
 config ZMK_BEHAVIOR_MOUSE_KEY_PRESS
     bool
     default y
+<<<<<<< HEAD
     depends on DT_HAS_ZMK_BEHAVIOR_MOUSE_KEY_PRESS_ENABLED && ZMK_MOUSE
+=======
+    depends on DT_HAS_ZMK_BEHAVIOR_MOUSE_KEY_PRESS_ENABLED && ZMK_POINTING
+>>>>>>> cb0007727391cdc404aaaa8b28a2bea8c6d6bd8d
 
 config ZMK_BEHAVIOR_STICKY_KEY
     bool
@@ -82,7 +84,6 @@ if ZMK_BEHAVIOR_STICKY_KEY
 
 config ZMK_BEHAVIOR_STICKY_KEY_MAX_HELD
     int "Sticky Key Max Held"
-    default 10
     help
       Max number of simultaneously held sticky keys
 
@@ -93,10 +94,32 @@ config ZMK_BEHAVIOR_SOFT_OFF
     default y
     depends on DT_HAS_ZMK_BEHAVIOR_SOFT_OFF_ENABLED && ZMK_PM_SOFT_OFF
 
+<<<<<<< HEAD
 config ZMK_BEHAVIOR_INPUT_TWO_AXIS
     bool
     default y
     depends on DT_HAS_ZMK_BEHAVIOR_INPUT_TWO_AXIS_ENABLED && ZMK_MOUSE
+=======
+
+config ZMK_BEHAVIOR_TAP_DANCE
+    bool
+    default y
+    depends on DT_HAS_ZMK_BEHAVIOR_TAP_DANCE_ENABLED
+
+if ZMK_BEHAVIOR_TAP_DANCE
+
+config ZMK_BEHAVIOR_TAP_DANCE_MAX_HELD
+    int "Tap-Dance Max Held"
+    help
+      Max number of simultaneously held taps-dances
+
+endif
+
+config ZMK_BEHAVIOR_INPUT_TWO_AXIS
+    bool
+    default y
+    depends on DT_HAS_ZMK_BEHAVIOR_INPUT_TWO_AXIS_ENABLED && ZMK_POINTING
+>>>>>>> cb0007727391cdc404aaaa8b28a2bea8c6d6bd8d
 
 config ZMK_BEHAVIOR_SENSOR_ROTATE_COMMON
     bool
