@@ -11,7 +11,10 @@ endif
 
 if SHIELD_MY_KEYBOARD_LEFT || SHIELD_MY_KEYBOARD_RIGHT
 
+
+
 config ZMK_SPLIT
+
     default y
 
 endif
